@@ -1,0 +1,24 @@
+# permissions for end users to edit copyresources.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: copyresource-editor-role
+rules:
+- apiGroups:
+  - resource.w3tec.ch
+  resources:
+  - copyresources
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - resource.w3tec.ch
+  resources:
+  - copyresources/status
+  verbs:
+  - get

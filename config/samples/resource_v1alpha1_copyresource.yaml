@@ -1,0 +1,7 @@
+apiVersion: resource.w3tec.ch/v1alpha1
+kind: CopyResource
+metadata:
+  name: copyresource-sample
+spec:
+  # Add fields here
+  foo: bar
