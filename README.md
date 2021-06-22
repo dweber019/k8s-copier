@@ -15,6 +15,10 @@ If you delete a CopyResource the target resource won't be deleted as it's possib
 ## Development
 For development, you should use `minikube` or any other possible kubernetes compatible implementation, as advised by the operator-sdk framework.
 
+### Setup
+### Go
+Follow the installation guide at https://golang.org/doc/install
+
 ### Update the CRD
 To update the CRD use the following command
 ```
