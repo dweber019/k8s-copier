@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Install npm dependencies
+        run: npm install --save-dev @semantic-release/{commit-analyzer,changelog,git,github} semantic-release @google/semantic-release-replace-plugin conventional-changelog-conventionalcommits
+
+      - name: Make release
+        run: npx --no-install semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
