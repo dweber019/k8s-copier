@@ -36,4 +36,5 @@ make deploy IMG=docker.io/dweber019/k8s-copier:v0.0.1
 - [Operator tutorial](https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/)
 
 ## Todo:
-- convential commits
+- Tests
+- Extend documentation
