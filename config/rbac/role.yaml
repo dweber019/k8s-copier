@@ -35,6 +35,18 @@ rules:
 - apiGroups:
   - v1
   resources:
+  - configmap
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - v1
+  resources:
   - secret
   verbs:
   - create
