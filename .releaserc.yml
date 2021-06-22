@@ -8,7 +8,7 @@ plugins:
   - - "@google/semantic-release-replace-plugin"
     - replacements:
         - files: [ "Makefile"]
-          from: "VERSION \?= .*"
+          from: "VERSION \\?= .*"
           to: "VERSION ?= ${nextRelease.version}"
           countMatches: true
           results:
