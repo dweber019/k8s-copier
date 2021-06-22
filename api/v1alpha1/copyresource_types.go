@@ -20,28 +20,24 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
-
 // CopyResourceSpec defines the desired state of CopyResource
 type CopyResourceSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
+	// The Kind of the Resource you like to copy
 	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Enum=Secret;ConfigMap
 	Kind string `json:"kind"`
 
+	// The MetaName of the Resource found in metadata.name
 	// +kubebuilder:validation:Required
 	MetaName string `json:"metaName"`
 
+	// The TargetNamespace the Resource should be copied to
 	// +kubebuilder:validation:Required
 	TargetNamespace string `json:"targetNamespace"`
 }
 
 // CopyResourceStatus defines the observed state of CopyResource
 type CopyResourceStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 	ResourceVersion string `json:"resourceVersion"`
 }
 

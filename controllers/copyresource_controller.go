@@ -45,6 +45,7 @@ type CopyResourceReconciler struct {
 // +kubebuilder:rbac:groups=resource.w3tec.ch,resources=copyresources/status,verbs=get;update;patch
 // +kubebuilder:rbac:groups=resource.w3tec.ch,resources=copyresources/finalizers,verbs=update
 // +kubebuilder:rbac:groups=v1,resources=secret,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=v1,resources=configmap,verbs=get;list;watch;create;update;patch;delete
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -76,7 +77,7 @@ func (r *CopyResourceReconciler) Reconcile(ctx context.Context, req ctrl.Request
 	sourceResource, _ := StringToStruct(copyResource.Spec.Kind)
 	err = r.Client.Get(ctx, namespacedName, sourceResource)
 	if err != nil && !errors.IsNotFound(err) {
-		log.Error(err, "Secret error.")
+		log.Error(err, "Get Resource error.")
 		return ctrl.Result{Requeue: true}, nil
 	}
 

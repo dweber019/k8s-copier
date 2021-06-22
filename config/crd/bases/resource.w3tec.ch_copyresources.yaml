@@ -37,10 +37,16 @@ spec:
             description: CopyResourceSpec defines the desired state of CopyResource
             properties:
               kind:
+                description: The Kind of the Resource you like to copy
+                enum:
+                - Secret
+                - ConfigMap
                 type: string
               metaName:
+                description: The MetaName of the Resource found in metadata.name
                 type: string
               targetNamespace:
+                description: The TargetNamespace the Resource should be copied to
                 type: string
             required:
             - kind
@@ -51,9 +57,6 @@ spec:
             description: CopyResourceStatus defines the observed state of CopyResource
             properties:
               resourceVersion:
-                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                  of cluster Important: Run "make" to regenerate code after modifying
-                  this file'
                 type: string
             required:
             - resourceVersion

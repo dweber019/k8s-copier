@@ -3,5 +3,6 @@ kind: CopyResource
 metadata:
   name: copyresource-sample
 spec:
-  # Add fields here
-  foo: bar
+  kind: Secret
+  metaName: your-resource-name
+  targetNamespace: namespace-one
