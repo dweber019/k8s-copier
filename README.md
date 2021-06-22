@@ -12,12 +12,17 @@ You can find some usage examples in `config/samples/**`.
 ### Behavior
 If you delete a CopyResource the target resource won't be deleted as it's possible that other implementation depend on it.
 
-## Development
-For development, you should use `minikube` or any other possible kubernetes compatible implementation, as advised by the operator-sdk framework.
-
-### Setup
+## Development setup
+### Conventional commits
+Execute the following terminal command in the root:
+```
+curl -o- https://raw.githubusercontent.com/craicoverflow/sailr/master/scripts/install.sh | bash
+```
 ### Go
 Follow the installation guide at https://golang.org/doc/install
+
+## Development
+For development, you should use `minikube` or any other possible kubernetes compatible implementation, as advised by the operator-sdk framework.
 
 ### Update the CRD
 To update the CRD use the following command
@@ -51,6 +56,7 @@ make deploy IMG=docker.io/dweber019/k8s-copier:v0.0.1
 ## Useful links
 - [Kubebilder](https://book.kubebuilder.io)
 - [Operator tutorial](https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/)
+- [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Todo:
 - Write some tests
